@@ -4,11 +4,11 @@ import base64
 import git
 from git import Repo
 
-r_dir = '/Users/westo/Desktop/Test/'
+r_dir = 'directory here'
 r = Repo(r_dir)
 
 today = datetime.date.today().strftime('%d %B, %Y')
-signature = '<p align="right">Signed, he_ro<br/>' + '<i>Federal District Court Judge</i></p>'
+signature = '<p align="right">Signed, your signature</p>'
 
 def start_function():
     op1 = input('[1] Sentencing Order\n[2] Motion to Suppress\n[3] Motion to Compel\n[4] Motion to Dismiss\n[5] Motion for Discovery\n[6] Custom Title\nInput: ')
@@ -33,7 +33,7 @@ def start_function():
         r.index.commit(fileType)
         r.git.pull('origin', 'master')
         r.git.push('origin','master')
-        print('https://github.com/uphost1/Forms2/blob/master/'+fileName)
+        print('github repo here'+fileName)
         start_function()
     if op1 == '1':
         input_stuff("SENTENCING ORDER")
