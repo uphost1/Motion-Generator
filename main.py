@@ -4,7 +4,7 @@ from git import Repo
 
 r_dir = os.path.dirname(os.path.realpath(__file__))
 r = Repo(r_dir)
-github_repo = 'https://github.com/uphost1/test-motions/blob/master/'
+github_repo = '' # Link to github repository
 
 today = datetime.date.today().strftime('%d %B, %Y')
 signature = '<p align="right">Signed, your signature</p>'
