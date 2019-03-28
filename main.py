@@ -5,20 +5,20 @@ from git import Repo
 
 r_dir = os.path.dirname(os.path.realpath(__file__))
 r = Repo(r_dir)
-github_repo = '' # link to your github repository
+github_repo = '' # link to github repo
 
 today = datetime.date.today().strftime('%d %B, %Y')
 signature = '<p align="right">Signed, your signature</p>'
 
 
 def start_function():
-    t_o_f = ['Sentencing Order', 'Motion to Suppress', 'Motion to Compel', 'Motion to Dismiss',
-             'Motion for Discovery', 'Custom Title']
+    t_o_f = ['SENTENCING ORDER', 'MOTION TO SUPPRESS', 'MOTION TO COMPEL', 'MOTION TO DISMISS',
+             'MOTION FOR DISCOVERY', 'Custom Title']
     for v, i in enumerate(t_o_f):
         print(f'[{v}]{i}\n')
     op1 = input('\nInput: ')
     print(f'Starting input for {t_o_f[int(op1)]}')
-    
+
     def input_stuff(ftype):
         global fileName, header, op4, fileType
         fileType = ftype
@@ -46,8 +46,11 @@ def start_function():
         start_function()
 
     for v, i in enumerate(t_o_f):
-        if op1 == str(v):
+        if op1 == str(v) and op1 != str(5):
             input_stuff(i)
+            save_stuff()
+        elif op1 == str(5):
+            input_stuff(input('Custom title: '))
             save_stuff()
 
 
